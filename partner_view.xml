@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<openerp>
+<data>
+    <!-- Add field province_id, district_id to res.company-->
+    <record model="ir.ui.view" id="view_partner_form_toponyms">
+        <field name="name">res.partner.form.toponyms</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name='city' position='replace'/>
+            <field name='country_id' position='replace'/>
+            <field name='state_id' position='replace'/>
+            <field name='zip' position='replace'/>
+            <field name='street2' position="after">
+                <field name="city" invisible='1'/>
+                <field name="country_id" placeholder='País' options='{"no_open": True}'/>
+                <div class="address_format">
+                    <field name="state_id" placeholder='Departamento' options='{"no_open": True}' on_change="onchange_state(state_id)" attrs="{'readonly': [('use_parent_address','=',True)]}" style="width: 37%%"/>
+                    <field name="province_id" domain="[('state_id','=',state_id)]" placeholder='Provincia' options='{"no_open": True}' style="width: 30%%"/>
+                    <field name="district_id" domain="[('province_id','=',province_id)]" placeholder='Distrito' options='{"no_open": True}' style="width: 30%%"/>
+                </div>
+                <field name="zip" placeholder='Cod. Postal' attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+            </field>
+        </field>
+    </record>
+
+</data>
+</openerp>
