@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <openerp>
 <data>
     <!-- Add field province_id, district_id to res.company-->
@@ -23,6 +23,5 @@
             </field>
         </field>
     </record>
-
 </data>
 </openerp>
