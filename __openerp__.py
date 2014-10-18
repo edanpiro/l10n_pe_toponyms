@@ -23,12 +23,10 @@
     "name": "Perú Localización - Topónimos",
     "version": "1.0",
     "author": "Cubic ERP",
-    "website": "http://www.yaroslab.com/",
+    "website": "http://cubicERP.com",
     "category": "Localization",
     "description": " Agrega departamentos, provincias y distritos del Perú",
     "depends": ["base", "sale"],
-    "init_xml": [],
-    "demo_xml": [],
     "data": [
         'partner_view.xml',
         'res_country_data.xml',
