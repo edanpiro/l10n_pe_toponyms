@@ -20,8 +20,8 @@
 ##############################################################################
 
 
-from osv import osv, fields
-from tools.translate import _
+from openerp.osv import osv, fields
+from openerp.tools.translate import _
 
 
 class country_state(osv.osv):
@@ -31,7 +31,9 @@ class country_state(osv.osv):
         'province_ids': fields.one2many('res.country.province', 'state_id', 'Provinces'),
     }
 
+
 country_state()
+
 
 class country_province(osv.osv):
     _name = 'res.country.province'
@@ -61,5 +63,6 @@ class country_district(osv.osv):
     _sql_constraints = [
             ('code_uniq','unique(code)',_('The code of the district must be unique !'))
         ]
+
 
 country_district()

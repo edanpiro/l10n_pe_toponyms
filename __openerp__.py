@@ -29,7 +29,7 @@
     "depends": ["base", "sale"],
     "init_xml": [],
     "demo_xml": [],
-    "update_xml": [
+    "data": [
         'partner_view.xml',
         'res_country_data.xml',
         'security/ir.model.access.csv',

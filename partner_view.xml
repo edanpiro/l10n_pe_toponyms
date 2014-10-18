@@ -7,22 +7,20 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <field name='city' position='replace'/>
-            <field name='country_id' position='replace'/>
-            <field name='state_id' position='replace'/>
-            <field name='zip' position='replace'/>
+            <field name="country_id" position="replace"/>
             <field name='street2' position="after">
                 <field name="city" invisible='1'/>
                 <field name="country_id" placeholder='País' options='{"no_open": True}'/>
+            </field>
+            <xpath expr="//div[@class='address_format']" position="replace">
+                <field name="state_id" class="oe_no_button" placeholder="State" options="{&quot;no_open&quot;: True}" on_change="onchange_state(state_id)" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
                 <div class="address_format">
-                    <field name="state_id" placeholder='Departamento' options='{"no_open": True}' on_change="onchange_state(state_id)" attrs="{'readonly': [('use_parent_address','=',True)]}" style="width: 37%%"/>
-                    <field name="province_id" domain="[('state_id','=',state_id)]" placeholder='Provincia' options='{"no_open": True}' style="width: 30%%"/>
-                    <field name="district_id" domain="[('province_id','=',province_id)]" placeholder='Distrito' options='{"no_open": True}' style="width: 30%%"/>
+                    <field name="province_id" placeholder="Provincia" style="width: 50%" options="{&quot;no_open&quot;: True}" attrs="{'readonly': [('use_parent_address','=',True)]}" domain="[('state_id','=',state_id)]"/>
+                    <field name="district_id" domain="[('province_id','=',province_id)]" placeholder='Distrito' options="{&quot;no_open&quot;: True}" style="width: 50%"/>
                 </div>
                 <field name="zip" placeholder='Cod. Postal' attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-            </field>
+            </xpath>
         </field>
     </record>
-
 </data>
 </openerp>
