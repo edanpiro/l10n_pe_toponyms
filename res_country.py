@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2013 Consultoria YarosLab (<http://www.yaroslab.com>)
+#    Copyright (C) 2011 Cubic ERP - Teradata SAC (<http://cubicerp.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,8 +19,10 @@
 #
 ##############################################################################
 
+
 from osv import osv, fields
 from tools.translate import _
+
 
 class country_state(osv.osv):
     _inherit = 'res.country.state'
@@ -44,7 +46,9 @@ class country_province(osv.osv):
             ('code_uniq','unique(code)',_('The code of the province must be unique !'))
         ]
 
+
 country_province()
+
 
 class country_district(osv.osv):
     _name = 'res.country.district'

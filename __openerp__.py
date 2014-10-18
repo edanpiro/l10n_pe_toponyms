@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2013 Consultoria YarosLab (<http://www.yaroslab.com>)
+#    Copyright (C) 2011 Cubic ERP - Teradata SAC (<http://cubicerp.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -22,7 +22,7 @@
 {
     "name": "Perú Localización - Topónimos",
     "version": "1.0",
-    "author": "YarosLab SAC",
+    "author": "Cubic ERP",
     "website": "http://www.yaroslab.com/",
     "category": "Localization",
     "description": " Agrega departamentos, provincias y distritos del Perú",

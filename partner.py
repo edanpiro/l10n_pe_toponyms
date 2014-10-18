@@ -19,16 +19,18 @@
 #
 ##############################################################################
 
+
 from osv import fields, osv
+
 
 class res_partner(osv.osv):
     _inherit = 'res.partner'
     _name = 'res.partner'
 
     _columns = {
-        'province_id': fields.many2one("res.country.province", 'Province',),
-        'district_id': fields.many2one("res.country.district", 'District',),
+        'province_id': fields.many2one("res.country.province", 'Province'),
+        'district_id': fields.many2one("res.country.district", 'District'),
     }
 
-res_partner()
 
+res_partner()
