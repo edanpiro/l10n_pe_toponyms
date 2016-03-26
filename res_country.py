@@ -20,49 +20,37 @@
 ##############################################################################
 
 
-from openerp.osv import osv, fields
-from openerp.tools.translate import _
+from openerp import models, fields, api
 
 
-class country_state(osv.osv):
+class CountryState(models.Model):
     _inherit = 'res.country.state'
-    _description = 'Country States'
-    _columns = {
-        'province_ids': fields.one2many('res.country.province', 'state_id', 'Provinces'),
-    }
+
+    province_ids = fields.One2many('res.country.province', 'state_id', 'Provinces')
 
 
-country_state()
-
-
-class country_province(osv.osv):
+class CountryProvince(models.Model):
     _name = 'res.country.province'
     _description = 'Country State Provinces'
-    _columns = {
-            'state_id': fields.many2one('res.country.state', 'State', required=True),
-            'name': fields.char('Province Name', size=64, required=True),
-            'code': fields.char('Province Code', size=6, required=True),
-            'district_ids': fields.one2many('res.country.district', 'province_id', 'Districts'),
-        }
+
+    state_id = fields.Many2one('res.country.state', 'State', required=True)
+    name = fields.Char('Province Name', size=64, required=True)
+    code = fields.Char('Province Code', size=6, required=True)
+    district_ids = fields.One2many('res.country.district', 'province_id', 'Districts')
+
     _sql_constraints = [
-            ('code_uniq','unique(code)',_('The code of the province must be unique !'))
-        ]
+        ('code_uniq','unique(code)','The code of the province must be unique !'),
+    ]
 
 
-country_province()
-
-
-class country_district(osv.osv):
+class CountryDistrict(models.Model):
     _name = 'res.country.district'
     _description = 'Country State Province Districts'
-    _columns = {
-            'province_id': fields.many2one('res.country.province', 'Province', required=True),
-            'name': fields.char('District Name', size=64, required=True),
-            'code': fields.char('District Code', size=8, required=True),
-        }
+
+    province_id = fields.Many2one('res.country.province', 'Province', required=True)
+    name = fields.Char('District Name', size=64, required=True)
+    code = fields.Char('District Code', size=8, required=True)
+
     _sql_constraints = [
-            ('code_uniq','unique(code)',_('The code of the district must be unique !'))
-        ]
-
-
-country_district()
+        ('code_uniq','unique(code)','The code of the district must be unique !')
+    ]
