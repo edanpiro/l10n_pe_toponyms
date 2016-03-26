@@ -2061,6 +2061,45 @@
 <record model="res.country.district" id="PE250302"><field name="name">IRAZOLA</field><field name="code">PE250302</field><field name="province_id" ref="PE2503"/></record>
 <record model="res.country.district" id="PE250303"><field name="name">CURIMANA</field><field name="code">PE250303</field><field name="province_id" ref="PE2503"/></record>
 <record model="res.country.district" id="PE250401"><field name="name">PURUS</field><field name="code">PE250401</field><field name="province_id" ref="PE2504"/></record>
-        
+    <record model="convention.country" id="convention_01">
+        <field name="name">NINGUNO</field>
+        <field name="code">00</field>
+    </record>
+    <record model="convention.country" id="convention_02">
+        <field name="name">CANADA</field>
+        <field name="code">01</field>
+    </record>
+    <record model="convention.country" id="convention_03">
+        <field name="name">CHILE</field>
+        <field name="code">02</field>
+    </record>
+    <record model="convention.country" id="convention_04">
+        <field name="name">COMUNIDAD ANDINA (CAN)</field>
+        <field name="code">03</field>
+    </record>
+    <record model="convention.country" id="convention_05">
+        <field name="name">BRASIL</field>
+        <field name="code">04</field>
+    </record>
+    <record model="convention.country" id="convention_06">
+        <field name="name">ESTADOS UNIDOS MEXICANOS</field>
+        <field name="code">05</field>
+    </record>
+    <record model="convention.country" id="convention_07">
+        <field name="name">REPUBLICA DE KOREA</field>
+        <field name="code">06</field>
+    </record>
+    <record model="convention.country" id="convention_08">
+        <field name="name">CONFEDERACION SUIZA</field>
+        <field name="code">07</field>
+    </record>
+    <record model="convention.country" id="convention_09">
+        <field name="name">PORTUGAL</field>
+        <field name="code">08</field>
+    </record>
+    <record model="convention.country" id="convention_10">
+        <field name="name">OTROS</field>
+        <field name="code">09</field>
+    </record>
     </data>
 </openerp>

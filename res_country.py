@@ -23,6 +23,21 @@
 from openerp import models, fields, api
 
 
+class ConventionCountry(models.Model):
+    _name = 'convention.country'
+
+    name = fields.Char('Descripcion', required=True)
+    code = fields.Char('Codigo', size=2, required=True)
+
+
+class ResCountry(models.Model):
+    _inherit = 'res.country'
+
+    code_sunat = fields.Char('Codigo sunat', help='Tabla 35 sunat')
+    convention_id = fields.Many2one('convention.country', 'Convenio tributacion',
+                                    help="Tabla 25 SUNAT")
+
+
 class CountryState(models.Model):
     _inherit = 'res.country.state'
 
