@@ -13,10 +13,10 @@
                 <field name="country_id" placeholder='País' options='{"no_open": True}'/>
             </field>
             <xpath expr="//div[@class='address_format']" position="replace">
-                <field name="state_id" class="oe_no_button" placeholder="State" options="{&quot;no_open&quot;: True}" on_change="onchange_state(state_id)" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                <field name="state_id" class="oe_no_button" placeholder="State" options="{&quot;no_open&quot;: True}" on_change="onchange_state(state_id)" attrs="{'readonly': [('use_parent_address','=',True)]}" domain="[('country_id','=',country_id)]"/>
                 <div class="address_format">
                     <field name="province_id" placeholder="Provincia" style="width: 50%" options="{&quot;no_open&quot;: True}" attrs="{'readonly': [('use_parent_address','=',True)]}" domain="[('state_id','=',state_id)]"/>
-                    <field name="district_id" domain="[('province_id','=',province_id)]" placeholder='Distrito' options="{&quot;no_open&quot;: True}" style="width: 50%"/>
+                    <field on_change="onchange_district(district_id)" name="district_id" domain="[('province_id','=',province_id)]" placeholder='Distrito' options="{&quot;no_open&quot;: True}" style="width: 50%"/>
                 </div>
                 <field name="zip" placeholder='Cod. Postal' attrs="{'readonly': [('use_parent_address','=',True)]}"/>
             </xpath>

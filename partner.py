@@ -21,6 +21,7 @@
 
 
 from openerp.osv import fields, osv
+from openerp import tools, api
 
 
 class res_partner(osv.osv):
@@ -33,4 +34,9 @@ class res_partner(osv.osv):
     }
 
 
-res_partner()
+    @api.multi
+    def onchange_district(self, district_id):
+        if district_id:
+            state = self.env['res.country.district'].browse(district_id)
+            return {'value': {'zip': state.code[2:]}}
+        return {}
