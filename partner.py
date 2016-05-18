@@ -20,17 +20,19 @@
 ##############################################################################
 
 
-from osv import fields, osv
+from openerp.osv import fields, osv
 
 
-class res_partner(osv.osv):
+class res_partner(osv.Model):
     _inherit = 'res.partner'
-    _name = 'res.partner'
 
     _columns = {
         'province_id': fields.many2one("res.country.province", 'Province'),
         'district_id': fields.many2one("res.country.district", 'District'),
     }
 
-
-res_partner()
+    def onchange_district(self, cr, uid, ids, district_id, context=None):
+        if district_id:
+            state = self.pool.get('res.country.district').browse(cr, uid, district_id)
+            return {'value': {'zip': state.code[2:]}}
+        return {}

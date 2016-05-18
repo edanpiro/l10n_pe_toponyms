@@ -21,7 +21,7 @@
                 <field name="state_id" class="oe_no_button" placeholder="State" options='{"no_open": True}' on_change="onchange_state(state_id)" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
                 <div class="address_format">
                     <field name="province_id" placeholder="Provincia" style="width: 49%%" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}" domain="[('state_id','=',state_id)]"/>
-                    <field name="district_id" domain="[('province_id','=',province_id)]" placeholder='Distrito' options='{"no_open": True}' style="width: 49.53%%"/>
+                    <field name="district_id" domain="[('province_id','=',province_id)]" on_change="onchange_district(district_id)" placeholder='Distrito' options='{"no_open": True}' style="width: 49.53%%"/>
                 </div>
                 <field name="zip" placeholder='Cod. Postal' attrs="{'readonly': [('use_parent_address','=',True)]}"/>
             </xpath>
