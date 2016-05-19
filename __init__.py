@@ -21,3 +21,4 @@
 
 import res_country
 import partner
+import res_company

@@ -32,7 +32,8 @@
     "update_xml": [
         'partner_view.xml',
         'res_country_data.xml',
-        'security/ir.model.access.csv',
+        'res_company_view.xml',
+        'security/ir.model.access.csv'
         ],
     'installable': True,
     'active': False,
