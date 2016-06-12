@@ -31,6 +31,7 @@
         'partner_view.xml',
         'res_country_data.xml',
         'res_country_view.xml',
+        "view/res_company_view.xml",
         'security/ir.model.access.csv',
         ],
     'installable': True,
