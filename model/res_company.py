@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from openerp import models, fields, api, _
+from odoo import models, fields, api, _
 
 
 class ResCompany(models.Model):
@@ -10,10 +10,10 @@ class ResCompany(models.Model):
     province_id = fields.Many2one('res.country.province', 'Provincia')
     district_id = fields.Many2one('res.country.district', 'District')
 
-    @api.one
     @api.onchange('district_id')
     def onchange_district(self):
         if self.district_id:
-            self.zip = self.district_id.code[2:]
+            zip = self.env['res.country.district'].browse(self.district_id.id)
+            self.zip = zip.code[2:]
         else:
             self.zip = False

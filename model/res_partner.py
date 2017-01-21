@@ -20,19 +20,14 @@
 ##############################################################################
 
 
-from openerp.osv import fields, osv
-from openerp import tools, api
+from odoo import models, fields, api
 
 
-class res_partner(osv.osv):
+class ResPartner(models.Model):
     _inherit = 'res.partner'
-    _name = 'res.partner'
 
-    _columns = {
-        'province_id': fields.many2one("res.country.province", 'Province'),
-        'district_id': fields.many2one("res.country.district", 'District'),
-    }
-
+    province_id = fields.Many2one('res.country.province', 'Province')
+    district_id = fields.Many2one('res.country.district', 'District')
 
     @api.multi
     def onchange_district(self, district_id):

@@ -21,19 +21,14 @@
 
 {
     "name": "Perú Localización - Topónimos",
-    "version": "1.0",
-    "author": "Cubic ERP",
-    "website": "http://cubicERP.com",
-    "category": "Localization",
     "description": " Agrega departamentos, provincias y distritos del Perú",
     "depends": ["base", "sale"],
     "data": [
-        'partner_view.xml',
-        'res_country_data.xml',
-        'res_country_view.xml',
+        'view/partner_view.xml',
+        'data/res_country_data.xml',
+        'view/res_country_view.xml',
         "view/res_company_view.xml",
         'security/ir.model.access.csv',
         ],
-    'installable': True,
-    'active': False,
+    'application': True,
 }

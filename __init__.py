@@ -19,6 +19,4 @@
 #
 ##############################################################################
 
-from . import res_country
-from . import partner
 from . import model
